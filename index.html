@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel and Theme Toggle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  /* Light theme styles */
+    body.light-theme {
+      background-color: rgba(255, 141, 1, 0.775);
+      color: rgb(0, 0, 0);
+    }
+    
+    body.light-theme .container {
+      background-color: rgba(255, 141, 1, 0);
+    }
+    
+    /* Dark theme styles */
+    body.dark-theme {
+      background-color: rgb(8, 8, 8);
+      color: white;
+    }
+    
+    body.dark-theme .container {
+      background-color: #000000;
+    }
+    
+    /* Carousel image size control */
+    .carousel-item img {
+      max-height: 460px;
+      max-width: 100%;
+      object-fit: cover;
+    }
+    
+    /* Centering the theme toggle button */
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    
+    button#toggle-theme {
+      margin-top: 10px;
+      padding: 10px 20px;
+    }
+</style>
+
+
+</head>
+<body class="light-theme">
+  <div class="container my-3 text-center">
+    <button id="toggle-theme" class="btn btn-primary">Toggle Theme</button>
+  </div>
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="max-width: 800px; margin: auto;">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.pexels.com/photos/28292140/pexels-photo-28292140/free-photo-of-a-sunrise-over-a-valley-with-trees-and-hills.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Image 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/28390187/pexels-photo-28390187/free-photo-of-texture-of-a-beautiful-carpet.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Image 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/9443525/pexels-photo-9443525.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Image 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script>
+    document.getElementById('toggle-theme').addEventListener('click', function(){
+    document.body.classList.toggle('dark-theme');
+    });
+  </script>
+</body>
+</html>
